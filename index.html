@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Modeling and visualising</title>
+    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sticky-menu.css" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Welcome</a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Web Page - IIIF</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#whatwedo">Open Sea Dragon</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Manifest</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#mirador">Mirador</a>
+                    </li>
+                </ul>
+            </div>	<!-- .navbar-collapse -->
+        </div>		<!-- .container -->
+    </nav>
+    <!-- Welcome   -->
+    <section id="welcome" class="welcome-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Modeling and Visualising Data</h1>
+					<h3>Material and resources - February-March 2021</h3> <h4>Univeristy of Venice, Ca' Foscari</h4>
+                    <a class="btn btn-primary page-scroll" href="#about">Click To Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Web Page and IIIF</h1>
+                    <h4>TO DO</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What we do Section -->
+    <section id="whatwedo" class="whatwedo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Open Sea Dragon</h1>
+                    <h4>TO DO</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Manifest - API Presentation</h1>
+                </div>
+                <div class="col-lg-12">
+                    <h4>API presentation - manifest</h4>
+                    <p><a href="https://iiif.io/api/presentation/3.0/#52-manifest">https://iiif.io/api/presentation/3.0/#52-manifest</a></p>
+                    <p>One of the main concepts for the Presentation API is the Manifest.</p>
+
+                    <p>A manifest contains enough information to display content to a user. It is a container for lots of different kinds of contextual information. The manifest can give information on how images are related to each other like the order that images should display, the structure of a document like a table of contents, and descriptive information for the resource and individual images.</p>
+                        
+                    <p>In one sense it is a performance optimization. Rather than a client having to follow a lot of links to pull in content, a manifest includes the information.</p>
+                        
+                    <p>IIIF just specifies the shape a manifest should take to make it easy to work with. Developers will know where to look for particular content and it makes it easier to compare documents or model your own manifest on someone else’s.</p>
+                    <h4>Shared Canvas</h4>
+                    <p><a href="https://iiif.io/model/shared-canvas/1.0/">https://iiif.io/model/shared-canvas/1.0/</a></p>
+                    <p>A canvas is a coordinate space on which images can be painted. Images are painted onto a canvas through annotation. In the simple case we’re only painting a single image annotation so that it fills the whole canvas.</p><p>We call it a shared canvas because it allows for painting multiple images onto the same canvas as well as overlaying additional annotations.
+                    </p><p>Think of a canvas as an empty presentation slide. You can put a page image on the canvas via annotation</p>
+                    <h4>Creating a manifest</h4>
+                    <p>In most cases in production you won’t actually be creating manifests by hand. You will probably have different systems and workflows from other institutions so will need to determine the best way for you to create manifests</p>
+                    <p>Here’s what the basic elements of a manifest</p>
+                    <ul>
+                        <li>Identifier @id</li>
+                        <li>Basic Description</li>
+                        <li>Sequence</li>
+                        <li>Canvas</li>
+                        <li>Image Annotation</li>
+                        <li>Image Service</li>
+                        <li>Metadata</li>
+                        <li>License</li>
+                    </ul>
+                    <p>Add the following text (curly braces) to your “manifest.json” file:</p>
+                    <pre>
+                        <code>
+                            {
+                             "property": "value"
+                              }
+                        </code>
+                    </pre>
+                    <p>All Presentation manifests must have the following properties.</p>
+                    <pre>
+                        <code>
+                        {
+                          "@context": "http://iiif.io/api/presentation/2/context.json",
+                          "@type": "sc:Manifest"
+                          }
+                    </code>
+                </pre>
+                <p>Both @context and @type are keywords from JSON-LD.</p>
+                <h4>@context</h4>
+                <p>Take a look at the @context:<a href="http://iiif.io/api/presentation/2/context.json">http://iiif.io/api/presentation/2/context.json</a></p><p>A @context is a way to define some short-hand names in a JSON-LD document. These shorthand names are called terms. Rather than listing out full HTTP IRIs we can use the short names here for things.</p><p>You’ll see how “sc” is used to map a property to an IRI, e.g. an HTTP identifier. If you look at some of the other properties you’ll see them prefixed with “sc:“.</p><p>Go ahead and visit where the “sc” points to: <a href="http://iiif.io/api/presentation/2#">http://iiif.io/api/presentation/2#</a></p><p> You ought to end up at http://iiif.io/api/presentation/2/ontology.xml which shows some RDF XML. We won’t get too much into the Linked data elements but we want to point out that JSON-LD is linked data. Since IIIF uses JSON-LD everywhere it also fits in the linked data universe. </p><p>One thing to note is that you don’t need to know anything about linked data to understand IIIF. IIIF uses of subset of JSON-LD so that it can be treated just like normal JSON. If you know how to work with JSON, that’s enough to be able to work with IIIF. Also, IIIF makes no assumption about what infrastructure you use. You don’t need to use something like a triplestore to create a IIIF Manifest.</p>
+                <h4>Basic Description</h4>
+
+                <a href="http://iiif.io/api/presentation/2.1/#descriptive-properties">http://iiif.io/api/presentation/2.1/#descriptive-properties</a>
+                    
+                <p>There is some basic description you’ll definitely want to add before you make a manifest available. We’ll start with these properties: label, description, attribution, and logo.</p>
+                <p>We will include all of these properties at the root level of the JSON.</p>
+                <h4>Label</h4>
+                <p>The label is a human readable name or title for the resource.</p>
+                Question: Does a manifest require a label?</p>
+                <p>Add “Papillons”, the French word for butterfly, as the label for this resource.</p>
+                <h4>Description</h4>
+                <p>The description allows for a longer full text description of the resource.</p>
+                <p>Add this as the value of the description property: “Four patterns inspired by butterflies.”</p>
+                <p>Question: Can you use HTML in a description?</p>
+                <h4>Attribution</h4>
+                <p>The attribution can be used to present copyright or ownership information or acknowledge the owning and/or publishing institution.</p>
+                <p>Question: When a client displays the resource, what is required to be done with the attribution?
+                <h4>JSON</h4>
+                <p>Your JSON ought to look something like this:</p>
+                    
+                <pre>
+                    <code> {
+                      "@context": "http://iiif.io/api/presentation/2/context.json",
+                      "@type": "sc:Manifest",
+                      "@id": "http://localhost:3000/manifest.json",
+                      "label": "Virtue",
+                      "description": "Love is an allegory very significant during the Middle Age.",
+                      "attribution": "Vaticana Collection
+                    }
+                </code></pre>
+                <p>There are some important elements of the Manifest that we did not add or edit using the online editor. The goal of this exercise will be to edit or add them manually. Each task is linked to the specification for the property that you will need to edit or add to the Manifest.</p>
+                <p>Provide a short description of this manifest -- the content is up to you.</p>
+                <p>Modify the attribution to the manifest that names the source of the images</p>
+                <p>Add the viewingHint to indicate that the item is paged (i.e., should display in two-up book reader mode)</p>
+                <p>Assert a Creative Commons 4.0 by-nc-sa license.</p>
+                <p>Add properties to the metadata following the pattern described in Language of Property Values.</p>
+                
+                <p>Hints:</p>
+                
+                <p>After each step, reload the Manifest in the <a href="http://universalviewer.io/">Universal Viewer</a> and confirm that the changes appear. Remember that the URL of the Manifest for this section is http://127.0.0.1:8887/manifest2.json because you are editing the copy.</p>
+                <p>Consult the sample Manifest in the specification to find examples of these properties.</p>
+                <p>If your Manifest doesn't load, first check for missing quotes or commas.
+                </p>
+
+                    <h4>Exercise</h4>
+                    <ol>
+                    <li>Navigate to the Bodleian editor:
+                        <a href="http://iiif-manifest-editor.textandbytes.com/#/?_k=j3tcw3">HTTP version at text version at the Bodleian</a></li>
+                    <li>Add at least two Canvases to your Manifest. The option to add a Canvas is below the main image preview, to the left.</li>
+                    <li>Click the "Canvas Metadata" expander in the right-hand column.</li>
+                    <li>Click "Add an Image". Choose the option to supply the info.json URL and enter the URL for your first image.</li>
+                    <li>Edit the Canvas Label and provide an appropriate label for your immage</li>
+                    <li>Repeat these steps to add additional Canvases and images as desired</li>
+                    <li>Click the "Manifest Metadata" header in the right-hand column. Edit the Label. Supply a label for your manifest.</li>
+                    <li>Click "Save Manifest" at the top of the right hand column. Click "Donwload Manifest" in the dialog box.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="mirador" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Mirador</h1>
+                </div>
+                <div class="col-lg-12"> 
+                  <ol>
+                    <li>Download Mirador <a href="https://github.com/tmancinelli/venice_modeling/tree/main/mirador1">here</a></li>
+                    <li>Add the Mirador script in your HTML. You can use a new GitHub repository or the same one.</li>
+                    <p><pre><code>
+                        &lt;body&gt;
+                        &lt;section class="hero"&gt;
+                          &lt;div class="hero-body"&gt;
+                            &lt;p class="title"&gt;
+                              Documenti d'Amore by Francesco da Barberino
+                            &lt;/p&gt;
+                            &lt;p class="subtitle"&gt;
+                              A IIIF experiment
+                            &lt;/p&gt;
+                          &lt;/div&gt;
+                        &lt;/section&gt;
+                    
+                        &lt;section class="section"&gt;
+                          &lt;div class="container"&gt;
+                            &lt;div style="height:500px;" id="my-mirador"&gt;&lt;/div&gt;
+                    
+                        &lt;script type="text/javascript"&gt;
+                        var mirador = Mirador.viewer({
+                        "id": "my-mirador",
+                        "manifests": {
+                        "manifest-1.json" : {
+                        "provider": "IIIF Tutorial University of Venice"
+                         }
+                        },
+                      "windows": [
+                        {
+                          "loadedManifest": "manifest-1.json",
+                          "canvasIndex": 1,
+                          "thumbnailNavigationPosition": 'far-bottom'
+                          }
+                        ]
+                      });
+                      &lt;/script&gt;
+                    
+                        &lt;/div&gt;
+                       &lt;/section&gt;</code></pre>
+                    </p>
+                    <li>Add your new manifest into the mirador script</li>
+                    <li>Open the shell and then then directory with index.html </li> 
+                    <li>write python3 -m http.server</li>
+                    <li>Open in your browser: localhost:8000</li>
+                </ol>
+              </div>
+            </div>
+        </div>
+    </section>
+	
+	<a id="back2Top" title="Back to top" href="#">&#10148;</a>
+	
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sticky-menu.js"></script>
+
+</body>
+
+</html>
